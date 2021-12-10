@@ -19,6 +19,20 @@ router.get('/',(req,res) => {
 
 });
 
+router.get('/history',(req,res) => {
+   
+
+    Transaction.find({  })
+    .then((data) => {
+        console.log('Data: ', data);
+        res.json(data);
+    })
+    .catch((error) => {
+       console.log('Error: ', error); 
+    });
+
+});
+
 router.get('/name',(req,res) => {
     const data = {
         username: 'koppam',

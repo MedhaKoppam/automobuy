@@ -1,30 +1,7 @@
 import React, {useEffect, useState} from "react";
 import '../styles/Buy.css';
 
-
-function submit(event) {
-    event.preventDefault();
-    const payload={
-        name: this.state.name,
-        cost: this.state.cost
-    };
-
-    axios({
-        url: 'http://localhost:8080/api/buy',
-        method: 'POST',
-        data: payload
-    })
-    .then(()=> {
-        console.log('Data has been sent to the server');
-    })
-    .catch(()=> {
-        console.log('Server error, data not written');
-    });;
-}
-
-
-
-function Cars(){
+function Transactions(){
     const [cars, setCars]=useState([{
         name:'',
         cost:0,
@@ -35,14 +12,12 @@ function Cars(){
     }])
 
     useEffect(()=>{
-        fetch('http://localhost:8080/api').then(res => {
+        fetch('http://localhost:8080/api/history').then(res => {
             if(res.ok){
                 return res.json();
             }
         }).then(jsonRes => setCars(jsonRes));
     })
-
-    
 
     return <div className="container">
         {cars.map(car => <div className='carEntity'>
@@ -51,11 +26,11 @@ function Cars(){
             <h2 className='keySpecs'>Key Specs:</h2>
             <p className='category'>Type: {car.category}</p>
             <p className='color'>Color: {car.color}</p>
-            <p className='fuel'>Fuel: {car.fuel}</p>
-            <button className='buy' onClick={()=>{ alert(`You have purchased ${car.name} at Rupees ${car.cost}`); }}>Buy</button>
+            <p className='fuel'>Type: {car.fuel}</p>
+            
         </div>)}
         <br></br>
     </div>
 }
 
-export default Cars;
+export default Transactions;

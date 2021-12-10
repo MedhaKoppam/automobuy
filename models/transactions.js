@@ -5,6 +5,10 @@ const Schema=mongoose.Schema;
 const TransactionSchema = new Schema({
     name: String,
     cost: Number,
+    fuel: String,
+    color: String,
+    status: String,
+    category: String
 });
 
 //Model
