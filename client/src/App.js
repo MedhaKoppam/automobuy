@@ -1,78 +1,33 @@
-import React from 'react';
-import axios from 'axios';
-import Cars from './components/Cars';
-import AliceCarousel from 'react-alice-carousel';
-import "react-alice-carousel/lib/alice-carousel.css";
-import image1 from './img/1.jpg';
-import image2 from './img/2.jpg';
-import image3 from './img/3.jpg';
-import image4 from './img/4.jpg';
-
-class App extends React.Component{
-
-  state={
-    name: '',
-    cost: 0,
-    fuel: '',
-    color: '',
-    status: '',
-    category: '',
-    cars: []
-  };
-
-  componentDidMount = () => {
-    this.getCar();
-    
-  };
-
-  getCar =() => {
-    axios.get('http://localhost:8080/api')
-    .then(async (response) => {
-      const data2= response.data;
-      //console.log('Data: ', data2);
-     await  this.setState({cars: data2});
-      console.log('Data has been received!');
-      console.log('Data: ', this.state.cars[0].name);
-    })
-    .catch(() => {
-      console.log('Error retrieving data!');
-    });
-  }
-
-  displayCar = (cars) => {
-   
-      if(cars.length==0) return <p>Lengthhhh {cars.length}</p>;
-
-    return cars.map((car, index) => {
-        <div key={index}>
-          <h3>{car.name}</h3>
-          <p>{car.fuel}</p>
-        </div>
-    });
-    
-  };
+import Navbar from './components/Navbar'
+import {BrowserRouter as Router,Route,Routes} from 'react-router-dom'
+import Home from './pages/Home'
+import Buy from './pages/Buy'
+import Sell from './pages/Sell'
+import About from './pages/About'
+import History from './pages/History'
+import "./App.css";
+import Footer from './components/Footer'
 
 
-
-  render (){
-    //this.getCar();
-    return(
-      <div>
-        <AliceCarousel autoPlay autoPlayInterval="3000">
-      <img src={image1} className="sliderimg"/>
-      <img src={image2} className="sliderimg"/>
-      <img src={image3} className="sliderimg"/>
-      <img src={image4} className="sliderimg"/>
-</AliceCarousel>
-        <div className="car" >
-          <Cars></Cars>
-        </div>
-      </div>
-    );
-  }
-
-  
-
+function App() {
+  return (
+    <div className="App">
+     
+      <Router>
+      <Navbar/>
+      <Routes>
+        <Route exact path='/' element={<Home />} />
+        <Route exact path='/home' element={<Home />} />        
+        <Route exact path='/buy' element={<Buy />} />        
+        <Route exact path='/sell' element={<Sell />} />
+        <Route exact path='/history' element={<History />} />
+        <Route exact path='/about' element={<About />} />
+        
+      </Routes>
+      </Router>
+      <Footer/>
+    </div>
+  );
 }
 
 export default App;

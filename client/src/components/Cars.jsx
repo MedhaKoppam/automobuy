@@ -1,6 +1,5 @@
 import React, {useEffect, useState} from "react";
-import '../App.css';
-const axios=require('axios');
+import '../styles/Buy.css';
 
 function Cars(){
     const [cars, setCars]=useState([{
@@ -19,16 +18,6 @@ function Cars(){
             }
         }).then(jsonRes => setCars(jsonRes));
     })
-
-    submit = (event) => {
-        event.preventDefault();
-        const payload={
-            name: this.state.name,
-            cost: this.state.cost
-        };
-
-        axios
-    };
 
     return <div className="container">
         {cars.map(car => <div className='carEntity'>

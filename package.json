@@ -13,6 +13,11 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "@emotion/react": "^11.7.0",
+    "@emotion/styled": "^11.6.0",
+    "@mui/icons-material": "^5.2.1",
+    "@mui/material": "^5.2.3",
+    "@mui/styled-engine-sc": "^5.1.0",
     "axios": "^0.24.0",
     "concurrently": "^6.4.0",
     "cors": "^2.8.5",
@@ -20,6 +25,15 @@
     "http-proxy-middleware": "^2.0.1",
     "mongoose": "^6.0.14",
     "morgan": "^1.10.0",
-    "react-alice-carousel": "^2.5.1"
+    "nodemon": "^2.0.15",
+    "react-alice-carousel": "^2.5.1",
+    "react-hook-use-state": "^1.1.0",
+    "react-router-dom": "^6.0.2",
+    "react-scripts": "^4.0.3",
+    "styled-components": "^5.3.3",
+    "web-vitals": "^2.1.2"
+  },
+  "devDependencies": {
+    "eslint-plugin-react-hooks": "^4.3.0"
   }
 }
