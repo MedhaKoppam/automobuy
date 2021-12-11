@@ -4,7 +4,12 @@ import { useState } from "react";
 import ReactDOM from 'react-dom';
 
 function Sell() {
-    const [name, setName ,cost , setCost , fuel , setFuel , color , setColor , status , setStatus ,category , setCategory] = useState("");
+    const [name, setName ] = useState("");
+    const [cost, setCost ] = useState("");
+    const [fuel, setFuel ] = useState("");
+    const [color, setColor ] = useState("");
+    const [status, setStatus ] = useState("");
+    const [category, setCategory ] = useState("");
     return (
         <div className="menu">
             <h1 className="menuTitle">Sell Your Car</h1>
