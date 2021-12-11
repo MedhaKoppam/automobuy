@@ -33,6 +33,7 @@ function Sell() {
                     <input type="text" value={category} onChange={(e) => setCategory(e.target.value)}/>
                 </label></p>
             </form>  
+            <button  onClick={()=>{ alert(`You have Sold your Car`); }}>Sell</button>
 
             
         </div>
