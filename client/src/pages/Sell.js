@@ -4,7 +4,7 @@ import { useState } from "react";
 import ReactDOM from 'react-dom';
 
 function Sell() {
-    const [name, setName] = useState("");
+    const [name, setName ,cost , setCost , fuel , setFuel , color , setColor , status , setStatus ,category , setCategory] = useState("");
     return (
         <div className="menu">
             <h1 className="menuTitle">Sell Your Car</h1>
@@ -13,19 +13,19 @@ function Sell() {
                     <input type="text" value={name} onChange={(e) => setName(e.target.value)}/>
                 </label></p>
                 <p><label>Enter Cost:
-                    <input type="text" value={name} onChange={(e) => setName(e.target.value)}/>
+                    <input type="text" value={cost} onChange={(e) => setCost(e.target.value)}/>
                 </label></p>
                 <p><label>Enter Fuel :
-                    <input type="text" value={name} onChange={(e) => setName(e.target.value)}/>
+                    <input type="text" value={fuel} onChange={(e) => setFuel(e.target.value)}/>
                 </label></p>
                 <p><label>Enter Color:
-                    <input type="text" value={name} onChange={(e) => setName(e.target.value)}/>
+                    <input type="text" value={color} onChange={(e) => setColor(e.target.value)}/>
                 </label></p>
                 <p><label>Enter Status:
-                    <input type="text" value={name} onChange={(e) => setName(e.target.value)}/>
+                    <input type="text" value={status} onChange={(e) => setStatus (e.target.value)}/>
                 </label></p>
                 <p><label>Enter Category:
-                    <input type="text" value={name} onChange={(e) => setName(e.target.value)}/>
+                    <input type="text" value={category} onChange={(e) => setCategory(e.target.value)}/>
                 </label></p>
             </form>  
 
